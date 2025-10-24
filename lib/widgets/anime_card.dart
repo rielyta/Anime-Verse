@@ -1,4 +1,6 @@
+import 'package:anime_verse/config/routes.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class AnimeCard extends StatelessWidget {
   final String id;
@@ -17,7 +19,11 @@ class AnimeCard extends StatelessWidget {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenHeight = MediaQuery.of(context).size.height;
 
-    return LayoutBuilder(
+    return GestureDetector(
+      onTap: () => {
+        context.push('${AppRoutes.details}/$id')
+      },
+    child:  LayoutBuilder(
       builder: (context, constraints) {
         final cardWidth = constraints.maxWidth;
 
@@ -69,6 +75,7 @@ class AnimeCard extends StatelessWidget {
           ),
         );
       },
+    )
     );
   }
 }

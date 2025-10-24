@@ -1,4 +1,7 @@
+import 'package:anime_verse/screens/home_screen.dart';
+import 'package:anime_verse/screens/signin_screen.dart';
 import 'package:anime_verse/widgets/app_scaffold.dart';
+import 'package:anime_verse/screens/detail_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -132,7 +135,11 @@ class SignUpScreen extends StatelessWidget {
                       height: screenHeight * 0.075,
                       child: ElevatedButton(
                           onPressed: () {
-                            // TODO: Implement sign up functionality
+                            //sementara
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => HomeScreen()),
+                            );
                           },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.blue.withValues(alpha: 0.8),
@@ -234,7 +241,10 @@ class SignUpScreen extends StatelessWidget {
                         ),
                         TextButton(
                           onPressed: () {
-                            // TODO: Navigate to sign in screen
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(builder: (context) => SignInScreen()),
+                            );
                           },
                           child: Text(
                             'Sign In',
